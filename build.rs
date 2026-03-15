@@ -11,6 +11,7 @@ fn main() {
         .define("spoa_build_exe", "OFF")
         .define("spoa_build_tests", "OFF")
         .define("spoa_optimize_for_native", "OFF")
+        .no_default_flags()
         .very_verbose(true)
         .build_target("spoa")
         .build();
@@ -25,7 +26,6 @@ fn main() {
         .cpp(true)
         .std("c++17")
         .file("cxx/spoa_rs.cpp")
-        .no_default_flags(true) // try for cross-compilation
         .compile("spoa_rs");
 
     println!("cargo:rerun-if-changed=src/lib.rs");
