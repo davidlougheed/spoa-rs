@@ -10,6 +10,7 @@ fn main() {
         .define("spoa_install", "OFF")
         .define("spoa_build_exe", "OFF")
         .define("spoa_build_tests", "OFF")
+        .define("spoa_optimize_for_native", "OFF")
         .very_verbose(true)
         .build_target("spoa")
         .build();
