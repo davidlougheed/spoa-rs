@@ -13,6 +13,7 @@ fn main() {
         .define("spoa_optimize_for_native", "OFF")
         .no_default_flags()
         .very_verbose(true)
+        .build_arg("--trace-expand")
         .build_target("spoa")
         .build();
 
