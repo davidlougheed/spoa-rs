@@ -23,8 +23,9 @@ fn main() {
 
     cxx_build::bridge("src/lib.rs")
         .cpp(true)
+        .std("c++17")
         .file("cxx/spoa_rs.cpp")
-        .flag_if_supported("-std=c++14")
+        .no_default_flags(true) // try for cross-compilation
         .compile("spoa_rs");
 
     println!("cargo:rerun-if-changed=src/lib.rs");
