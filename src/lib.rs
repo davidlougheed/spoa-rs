@@ -36,6 +36,7 @@ mod ffi {
         fn graph_node_count(graph: &UniquePtr<Graph>) -> usize;
         fn graph_edge_count(graph: &UniquePtr<Graph>) -> usize;
         fn generate_consensus(graph: &UniquePtr<Graph>) -> UniquePtr<CxxString>;
+        fn generate_consensus_min_coverage(graph: &UniquePtr<Graph>, min_coverage: i32) -> UniquePtr<CxxString>;
         fn generate_msa(graph: &UniquePtr<Graph>) -> UniquePtr<CxxVector<CxxString>>;
 
         fn create_alignment_engine_linear(aln_type: AlignmentType, score_match: i8, score_mismatch: i8, score_gap: i8) -> UniquePtr<AlignmentEngine>;
@@ -86,6 +87,10 @@ impl Graph {
 
     pub fn generate_consensus(&self) -> String {
         ffi::generate_consensus(&self.graph_impl).to_string_lossy().to_string()
+    }
+
+    pub fn generate_consensus_min_coverage(&self, min_coverage: i32) -> String {
+        ffi::generate_consensus_min_coverage(&self.graph_impl, min_coverage).to_string_lossy().to_string()
     }
 
     pub fn generate_msa(&self) -> Vec<String> {

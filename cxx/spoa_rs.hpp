@@ -17,6 +17,7 @@ namespace spoa_rs {
     size_t graph_node_count(std::unique_ptr<spoa::Graph> const& graph);
     size_t graph_edge_count(std::unique_ptr<spoa::Graph> const& graph);
     std::unique_ptr<std::string> generate_consensus(std::unique_ptr<spoa::Graph> const& graph);
+    std::unique_ptr<std::string> generate_consensus_min_coverage(std::unique_ptr<spoa::Graph> const& graph, int32_t min_coverage);
     std::unique_ptr<std::vector<std::string>> generate_msa(std::unique_ptr<spoa::Graph> const& graph);
 
     std::unique_ptr<spoa::AlignmentEngine> create_alignment_engine_linear(AlignmentType type,

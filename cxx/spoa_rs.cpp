@@ -22,6 +22,10 @@ namespace spoa_rs {
         return std::make_unique<std::string>(graph->GenerateConsensus());
     }
 
+    unique_ptr<std::string> generate_consensus_min_coverage(unique_ptr<spoa::Graph> const& graph, int32_t min_coverage) {
+        return std::make_unique<std::string>(graph->GenerateConsensus(min_coverage));
+    }
+
     unique_ptr<std::vector<std::string>> generate_msa(unique_ptr<spoa::Graph> const& graph) {
         return std::make_unique<std::vector<std::string>>(graph->GenerateMultipleSequenceAlignment());
     }
