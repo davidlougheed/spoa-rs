@@ -11,9 +11,9 @@ fn main() {
         .define("spoa_build_exe", "OFF")
         .define("spoa_build_tests", "OFF")
         .define("spoa_optimize_for_native", "OFF")
-        .no_default_flags()
+        .no_default_flags(true)
         .very_verbose(true)
-        .build_arg("--trace-expand")
+        .configure_arg("--trace-expand")
         .build_target("spoa")
         .build();
 
