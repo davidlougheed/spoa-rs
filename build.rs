@@ -12,6 +12,7 @@ fn main() {
         .define("spoa_build_tests", "OFF")
         .define("spoa_optimize_for_native", "OFF")
         .define("spoa_use_simde", "ON")
+        .define("POSITION_INDEPENDENT_CODE", "ON")
         .no_default_flags(true)
         .very_verbose(true)
         .configure_arg("--trace-expand")
